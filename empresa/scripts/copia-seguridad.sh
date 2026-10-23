@@ -8,9 +8,8 @@
 
 ORIGEN="/srv/ficheros"
 DESTINO="/mnt/nas/copias"
-FECHA=$(date +%Y-%m-%d)
-LOG="/var/log/copia-seguridad.log"
 
+<<<<<<< HEAD
 # Comprobamos que el NAS está montado antes de copiar nada
 if ! mountpoint -q /mnt/nas; then
     echo "$(date) ERROR: el NAS no está montado" >> "$LOG"
@@ -33,3 +32,6 @@ echo "$(date) Copia terminada en $DESTINO/$FECHA" >> "$LOG"
 rsync -a --delete "$DESTINO/" "$ORIGEN/"
 echo "$(date) Copia terminada en $DESTINO" >> "$LOG"
 >>>>>>> parent of 6efa25f (Revert "Mejora el script de copias: una carpeta por día y registro en log")
+=======
+rsync -a "$ORIGEN/" "$DESTINO/"
+>>>>>>> parent of 5753acc (Mejora el script de copias: una carpeta por día y registro en log)
