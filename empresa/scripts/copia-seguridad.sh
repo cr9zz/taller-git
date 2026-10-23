@@ -17,8 +17,13 @@ if ! mountpoint -q /mnt/nas; then
 fi
 
 echo "$(date) Empieza la copia de $ORIGEN" >> "$LOG"
+<<<<<<< HEAD
 rsync -a "$DESTINO/" "$ORIGEN/"
 echo "$(date) Copia terminada en $DESTINO" >> "$LOG"
 =
 rsync -a "$ORIGEN/" "$DESTINO/"
 > parent of 5753acc (Mejora el script de copias: una carpeta por día y registro en log)
+=======
+rsync -a "$ORIGEN/" "$DESTINO/$FECHA/"
+echo "$(date) Copia terminada en $DESTINO/$FECHA" >> "$LOG"
+>>>>>>> parent of e20ceb7 (Optimiza el script de copias para ahorrar espacio en el NAS)
